@@ -11,7 +11,7 @@ author:
   - Raed Mansour (City of Chicago)
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 abstract: |
-  The Chicago Department of Public Health (CDPH) inspects more than 15,000 restaurants with fewer than three dozen sanitarians over the course of the year. This paper describes a predictive model designed to identify the presence of a critical violation in a particular food establishment. The goal of this model is to prioritize inspections by likelihood in order to identify the riskiest restaurants earlier, thereby reducing the length of exposure of risky restaurants to patrons. Critical violations were identified approximately `r sprintf("%0.2f", mean(time_diff))` days earlier over a 60 day period compared to current operations in the out-of-sample test.
+  The Chicago Department of Public Health (CDPH) inspects more than 15,000 restaurants with fewer than three dozen sanitarians over the course of the year. This paper describes a predictive model designed to identify the presence of a critical violation in a particular food establishment. The goal of this model is to prioritize inspections by likelihood in order to identify the riskiest restaurants earlier, thereby reducing the length of exposure of risky restaurants to patrons. Critical violations were identified approximately `r sprintf("%0.2f", mean(time_diff))` days earlier over a 60 day period compared to current operations in the out-of-sample test. We also implemented the model with CDPH to provide a data-driven allocation of inspectors.
 output:
   html_document:
     css: ../assets/journal-chicago/css/journal-chicago.css
