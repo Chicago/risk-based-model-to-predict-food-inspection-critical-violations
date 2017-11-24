@@ -229,7 +229,7 @@ Fifteen percent of the typical, "canvas" inspections yielded a failure. Failures
 
 The model set forth in this paper can help with the prioritization of scheduled, saving time and money as well as making the city's food safer. The model uses several data sources and almost a dozen variables  that forecasts a food establishment's current risk based on real-time data. We conducted an experimental pilot to evaluate the effectiveness of the model and found it was able to accelerate the rate of finding establishments with critical violations.
 
-# Background
+## Literature Review
 
 `r citet(biblio["buchholz_risk-based_2002"])` built a model showing that lower inspection scores and previous violations were predictors for future foodborne incidents. While food establishments can be cited for a number of violations, foodborne illnesses were associated with food handling, temperature control, and proper storage of food `r citep(biblio[c("petran_health_2012","irwin_results_1989","kramer_neighborhood_2016")])`.
 
@@ -308,7 +308,7 @@ There are 42 different possible violations that can be cited by CDPH. These viol
 
 Restaurants can fail their inspections with as little as one critical violation, however serious and minor violations during an inspection can also culminate to a failed outcome. Failed inspections mean the food establishment is no longer able to operate until a follow-up inspection is conducted and demonstrates that all critical violations have been remediated.
 
-# Model Development
+# Methods
 
 The principle question is whether we can reasonably determine the probability that a restaurant inspection will yield at least one critical violation. That is, the focus will be whether or not any critical violation is found---a binary response. We mostly use publicly available data to look at the history food inspections and associate with information about the food establishment itself and also information about the neighborhood.
 
@@ -410,8 +410,7 @@ Thus, we tuned the model to minimize "missed" predictions. The vertical line in 
 [INSERT CONFUSION MATRIX]
 
 
-
-# Evaluation
+# Results
 
 After developing and tuning the statistical model to predict critical violations, the research team evaluated whether the model could optimize food inspection processes. Namely, the model is used to determine how much faster the food inspection team can discover critical violations. The team uses a simulation to compare real-life results to an alternate, data-driven arrangement.
 
@@ -431,7 +430,7 @@ Meanwhile, we calculate the point predictions for each establishment using the t
 
 We calculate the percentage of those restaurants that would be inspected in the first half if the predictive model was used. The difference between the percentage of establishments found with critical violations during this period reflects the relative gain or loss of efficiency. Finding a greater percentage of critical violations with the predictive model indicates results can be found earlier. A similar or reduced amount indicates the predictive model provides no benefit or is less efficient, respectively.
 
-## Results
+## Evaluation
 
 CDPH completed `r geneorama::comma(datTest[, .N])` inspections between `r datTest[ , as.POSIXct(min(Inspection_Date))]` and `r datTest[ , as.POSIXct(max(Inspection_Date))]`. During this time, CDPH found `r datTest[ , sum(criticalFound)]` violations, `r datTest[ , paste0(round(100*(sum(criticalFound)/.N), 1), "%")]`percent of all inspections. The rate of violations is consistent with the historical average of approximately 15 percent. While the rate of violations is slightly higher, it is close enough where we do not suspect this period is abnormal, thus, a valid comparison for our evaluation.
 
@@ -550,7 +549,7 @@ ggplot(melt(data = comp_summary_cumsum,
 ```
 
 
-# Summary
+# Discussion
 
 This model was able to reduce the timeframe to discover critical violations at Chicago's food establishments by `r sprintf("%0.2f", mean(time_diff))` days across 8 weeks. This study provides several insights on the drivers for determining restaurants failing food inspections. Consistent with prior research, food establishments with previous critical and serious violations are likely to have those violations in the future. 
 
