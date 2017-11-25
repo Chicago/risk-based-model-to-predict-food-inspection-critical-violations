@@ -589,7 +589,7 @@ Some useful data was not available for the research team. The restaurant cuisine
 
 At times, we've explicitly assumed that finding violations is time invariant throughout the pilot phase. That is, a food establishment found with a critical violation on day 40 would have also been found to have a violation even if it was inspected earlier. Unfortunately, we do not have a method to test this assumption. However, the relatively short time window of the study helped ensure external factors, such as severe weather, had limited impact on temporal violations.
 
-Additional data can also be used to supplement this model. A surge of recent research and explored the use of social media and online restaurant reviews to predict food inspection results `r citep(biblio[c("harris_health_2014", "kang_where_2013", "sadilek_nemesis:_2013")])`. These inputs are complementary to risk-based models for canvas inspections. Social media-based reports and online reviews are better-suited to help generate and respond to complaint-based inspections, which this at-risk model does not attempt to address.
+Additional data can also be used to supplement this model. A surge of recent research and explored the use of social media and online restaurant reviews to predict food inspection results `r citep(biblio[c("harris_health_2014", "kang_where_2013", "sadilek_nemesis:_2013", "schomberg_supplementing_2016")])`. These inputs are complementary to risk-based models for canvas inspections. Social media-based reports and online reviews are better-suited to help generate and respond to complaint-based inspections, which this at-risk model does not attempt to address.
 
 ## Acknowledgements
 
